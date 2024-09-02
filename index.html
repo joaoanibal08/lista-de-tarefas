@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas tarefas</title>
+</head>
+<body>
+    <h1>Tarefas</h1>
+    <ul>
+        <li>Estudar HTML</li>
+        <li>Estudar CSS</li>
+        <li>Estudar JS</li>
+    </ul>
+    <input type="text">
+    <button onclick="add()">Adicionar</button>
+    <script>
+        function add(){
+            const input = document.querySelector('input');
+            const tarefa = input.value;
+            const ul = document.querySelector('ul')
+            const li = document.createElement('li');
+            li.innerText = tarefa;
+            ul.appendChild(li)
+            input.value = ''
+        };
+    </script>
+</body>
+</html>
