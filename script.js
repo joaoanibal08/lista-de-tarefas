@@ -18,7 +18,35 @@ botaoLimpar.addEventListener('click', () => {
 });
        
 // Mostrar estado na tela
-function render(){
+function render() {
+    ul.innerHTML = '';
+
+    tarefas.forEach(function(tarefa, index) {
+        const li = document.createElement('li');
+
+        const textoTarefa = document.createElement('span');
+        textoTarefa.textContent = `${tarefa}`;
+
+        // Cria e configura botão de remover
+        const botaoRemover = document.createElement('button');
+        botaoRemover.textContent = 'Remover';
+        botaoRemover.classList.add('botao');
+        botaoRemover.setAttribute("id" , "botaoRemover");
+
+
+        botaoRemover.addEventListener('click', () => {
+            tarefas.splice(index, 1);
+            render();
+        });
+
+        li.appendChild(textoTarefa);
+        li.appendChild(botaoRemover);
+        ul.appendChild(li);
+    });
+
+}
+
+/* function render(){
     ul.innerHTML = null;
 
     tarefas.forEach(function(tarefa){
@@ -26,7 +54,37 @@ function render(){
         li.innerHTML = `${tarefa} <button class="botao" id="botaoRemover">Remove</button> <hr class="linha-tarefa"> `;
         ul.appendChild(li);
     })
-}        
+}        */ 
+
+    /* 
+    
+    ul.innerHTML = '';
+
+    tarefas.forEach(function(tarefa, index) {
+        const li = document.createElement('li');
+
+        const textoTarefa = document.createElement('span');
+        textoTarefa.textContent = `${tarefa}`;
+
+        // Cria e configura botão de remover
+        const botaoRemover = document.createElement('button');
+        botaoRemover.textContent = 'Remover';
+        botaoRemover.classList.add('botao');
+        botaoRemover.setAttribute("id" , "botaoRemover");
+
+
+        botaoRemover.addEventListener('click', () => {
+            tarefas.splice(index, 1);
+            render();
+        });
+
+        li.appendChild(textoTarefa);
+        li.appendChild(botaoRemover);
+        ul.appendChild(li);
+    });
+
+    */
 
 // Iniciar o processo 
 render();
+
