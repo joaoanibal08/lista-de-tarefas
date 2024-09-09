@@ -40,9 +40,11 @@
    margin: 20px 0;
  }
 
- .linha {
-   background-color: yellow;
-   height: 2px;
+ .linha-tarefa {
+  border: none; 
+  height: 1px; 
+  background-color: #000; 
+  margin: 3px 30px;
  }
 
  footer {
@@ -78,4 +80,8 @@
 
  #botaoLimpar {
    background-color: rgb(221, 57, 17);
+ }
+
+ #botaoRemover {
+   background-color: black;
  }

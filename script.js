@@ -23,7 +23,7 @@ function render(){
 
     tarefas.forEach(function(tarefa){
         const li = document.createElement('li');
-        li.innerHTML = `${tarefa} <hr style="border: none; height: 1px; background-color: #000; margin: 3px 30px;">`;
+        li.innerHTML = `${tarefa} <button class="botao" id="botaoRemover">Remove</button> <hr class="linha-tarefa"> `;
         ul.appendChild(li);
     })
 }        
