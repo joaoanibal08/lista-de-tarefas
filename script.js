@@ -1,29 +1,32 @@
-        // Estado da aplicação
-        const tarefas = ['Estudar HTML', 'Estudar CSS', 'Estudar JS'];
+const botaoAdd = document.getElementById('botaoAdd');   
+const botaoLimpar = document.getElementById('botaoLimpar');
+const ul = document.querySelector('ul');
+const tarefas = [];
 
-        // Alteradores de estado da aplicação
-
-        function add(){
-            const input = document.querySelector('input');
-            const tarefa = input.value;
-            tarefas.push(tarefa);
+botaoAdd.addEventListener('click', () => {
+    const input = document.querySelector('input');
+    const tarefa = input.value;
+    tarefas.push(tarefa);
             
-            input.value = ''
-            render()
-        };
+    input.value = ''
+    render()
+});
 
-        // Mostrar estado na tela
+botaoLimpar.addEventListener('click', () => { 
+    ul.innerHTML = null;
+    tarefas.length = 0;
+});
+       
+// Mostrar estado na tela
+function render(){
+    ul.innerHTML = null;
 
-        function render(){
-            const ul = document.querySelector('ul');
-            ul.innerHTML = null;
+    tarefas.forEach(function(tarefa){
+        const li = document.createElement('li');
+        li.innerText = tarefa;
+        ul.appendChild(li);
+    })
+}        
 
-            tarefas.forEach(function(tarefa){
-                const li = document.createElement('li');
-                li.innerText = tarefa;
-                ul.appendChild(li);
-            })
-        }
-
-        // Iniciar o processo 
-        render();
+// Iniciar o processo 
+render();
