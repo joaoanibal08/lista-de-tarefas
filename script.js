@@ -23,7 +23,7 @@ function render(){
 
     tarefas.forEach(function(tarefa){
         const li = document.createElement('li');
-        li.innerText = tarefa;
+        li.innerHTML = `${tarefa} <hr style="border: none; height: 1px; background-color: #000; margin: 3px 30px;">`;
         ul.appendChild(li);
     })
 }        

@@ -36,6 +36,15 @@
     list-style-type: none;
  }
 
+ li {
+   margin: 20px 0;
+ }
+
+ .linha {
+   background-color: yellow;
+   height: 2px;
+ }
+
  footer {
     margin-top: 1em;
  }
