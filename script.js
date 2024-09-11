@@ -25,7 +25,7 @@ function render() {
         const li = document.createElement('li');
 
         const textoTarefa = document.createElement('span');
-        textoTarefa.textContent = `${tarefa}`;
+        textoTarefa.innerHTML = `${tarefa} <hr class = "linha-tarefa">`;
 
         // Cria e configura botão de remover
         const botaoRemover = document.createElement('button');
@@ -45,6 +45,9 @@ function render() {
     });
 
 }
+
+// Iniciar o processo 
+render();
 
 /* function render(){
     ul.innerHTML = null;
@@ -85,6 +88,5 @@ function render() {
 
     */
 
-// Iniciar o processo 
-render();
+
 
